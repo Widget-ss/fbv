@@ -56,7 +56,7 @@ PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" el
 
 # Auto delete time in seconds.
 AUTO_DELETE_TIME = int(os.getenv("AUTO_DELETE_TIME", "600"))
-AUTO_DELETE_MSG = os.environ.get("AUTO_DELETE_MSG", "For Buying all videos in cheap price DM - @mombucks")
+AUTO_DELETE_MSG = os.environ.get("AUTO_DELETE_MSG", "This is DEMO videos for Buying all videos in cheap price DM - @mombucks")
 AUTO_DEL_SUCCESS_MSG = os.environ.get("AUTO_DEL_SUCCESS_MSG", "Video Deleted. for buying our service in cheap price. DM - @mombucks")
 
 #Set true if you want Disable your Channel Posts Share button
