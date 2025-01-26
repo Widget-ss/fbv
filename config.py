@@ -37,7 +37,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #start message
 START_PIC = os.environ.get("START_PIC","")
-START_MSG = os.environ.get("START_MESSAGE", "Just a private Video selling bot for buying videos DM - @mombucks")
+START_MSG = os.environ.get("START_MESSAGE", "Just a private Video selling bot for buying videos DM - @ziseller")
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "6517098590").split()):
