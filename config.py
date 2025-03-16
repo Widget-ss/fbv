@@ -40,7 +40,7 @@ START_PIC = os.environ.get("START_PIC","")
 START_MSG = os.environ.get("START_MESSAGE", "Just a private Video selling bot for buying full videos bundle DM - @VerifiedSeller66")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "6517098590").split()):
+    for x in (os.environ.get("ADMINS", "7835791027").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
