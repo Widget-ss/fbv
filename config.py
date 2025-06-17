@@ -8,7 +8,7 @@ from logging.handlers import RotatingFileHandler
 load_dotenv()
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7946830738:AAF5gBWyuRh-QL1W73bU4sWbw6_qkD-iZAs")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7607354567:AAFnHIPpaSZFkFVyu0KEQH6KogWjvNlE-ec")
 
 #Your API ID from my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "26788480"))
@@ -17,7 +17,7 @@ APP_ID = int(os.environ.get("APP_ID", "26788480"))
 API_HASH = os.environ.get("API_HASH", "858d65155253af8632221240c535c314")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002668010286"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002507378770"))
 
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "7845991207"))
@@ -56,8 +56,8 @@ PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" el
 
 # Auto delete time in seconds.
 AUTO_DELETE_TIME = int(os.getenv("AUTO_DELETE_TIME", "600"))
-AUTO_DELETE_MSG = os.environ.get("AUTO_DELETE_MSG", "This is DEMO videos for Buying all videos in cheap price DM - @VerifiedSeller96\n\nये सिर्फ डेमो है, वीडियो का पैकेज खरीदने के लिए DM करे - @VerifiedSeller96")
-AUTO_DEL_SUCCESS_MSG = os.environ.get("AUTO_DEL_SUCCESS_MSG", "Video Deleted. for buying our service in cheap price. DM - @VerifiedSeller96\n\nये सिर्फ डेमो है, वीडियो का पैकेज खरीदने के लिए DM करे - @VerifiedSeller96")
+AUTO_DELETE_MSG = os.environ.get("AUTO_DELETE_MSG", "This is DEMO videos for Buying all videos in cheap price DM - @VerifiedSeller005\n\nये सिर्फ डेमो है, वीडियो का पैकेज खरीदने के लिए DM करे - @VerifiedSeller005")
+AUTO_DEL_SUCCESS_MSG = os.environ.get("AUTO_DEL_SUCCESS_MSG", "Video Deleted. for buying our service in cheap price. DM - @VerifiedSeller005\n\nये सिर्फ डेमो है, वीडियो का पैकेज खरीदने के लिए DM करे - @VerifiedSeller005")
 
 #Set true if you want Disable your Channel Posts Share button
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
@@ -66,7 +66,7 @@ BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "❌Don't send me messages directly I'm only bot!"
 
 ADMINS.append(OWNER_ID)
-ADMINS.append(6053757293)
+ADMINS.append(7572277094)
 ADMINS.append(6517098590)
 
 LOG_FILE_NAME = "filesharingbot.txt"
