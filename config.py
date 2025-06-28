@@ -23,7 +23,7 @@ CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002507378770"))
 OWNER_ID = int(os.environ.get("OWNER_ID", "7845991207"))
 
 #Port
-PORT = os.environ.get("PORT", "8050")
+PORT = os.environ.get("PORT", "8045")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://k2link:K2link123@k2link.oq3vz.mongodb.net/?retryWrites=true&w=majority&appName=k2link")
