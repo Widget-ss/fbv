@@ -37,7 +37,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #start message
 START_PIC = os.environ.get("START_PIC","")
-START_MSG = os.environ.get("START_MESSAGE", "Just a private Video selling bot for buying full videos bundle DM - @VerifiedSeller005")
+START_MSG = os.environ.get("START_MESSAGE", "Just a private Video selling bot for buying full videos bundle DM - @VerifiedSeller089")
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "7835791027").split()):
@@ -56,8 +56,8 @@ PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" el
 
 # Auto delete time in seconds.
 AUTO_DELETE_TIME = int(os.getenv("AUTO_DELETE_TIME", "600"))
-AUTO_DELETE_MSG = os.environ.get("AUTO_DELETE_MSG", "This is DEMO videos for Buying all videos in cheap price DM - @VerifiedSeller005\n\nये सिर्फ डेमो है, वीडियो का पैकेज खरीदने के लिए DM करे - @VerifiedSeller005")
-AUTO_DEL_SUCCESS_MSG = os.environ.get("AUTO_DEL_SUCCESS_MSG", "Video Deleted. for buying our service in cheap price. DM - @VerifiedSeller005\n\nये सिर्फ डेमो है, वीडियो का पैकेज खरीदने के लिए DM करे - @VerifiedSeller005")
+AUTO_DELETE_MSG = os.environ.get("AUTO_DELETE_MSG", "This is DEMO videos for Buying all videos in cheap price DM - @VerifiedSeller089\n\nये सिर्फ डेमो है, वीडियो का पैकेज खरीदने के लिए DM करे - @VerifiedSeller089")
+AUTO_DEL_SUCCESS_MSG = os.environ.get("AUTO_DEL_SUCCESS_MSG", "Video Deleted. for buying our service in cheap price. DM - @VerifiedSeller089\n\nये सिर्फ डेमो है, वीडियो का पैकेज खरीदने के लिए DM करे - @VerifiedSeller089")
 
 #Set true if you want Disable your Channel Posts Share button
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
