@@ -1,20 +1,58 @@
-#(©)CodeXBotz
-
 import os
 import asyncio
 from pyrogram import Client, filters
-from pyrogram.enums import ParseMode
+from pyrogram.enums import ParseMode, ChatMemberStatus
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
+from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated, UserNotParticipant
 
 from bot import Bot
 from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, START_PIC, AUTO_DELETE_TIME, AUTO_DELETE_MSG, JOIN_REQUEST_ENABLE,FORCE_SUB_CHANNEL
 from helper_func import subscribed,decode, get_messages, delete_file
 from database.database import add_user, del_user, full_userbase, present_user
 
+# ----------------- <<< EDIT HERE: Put channel ids/usernames >>> -----------------
+# Add the channels (ids or usernames) you want to require membership in.
+# Examples: CHANNEL_IDS = [-1001234567890, -1009876543210] or CHANNEL_IDS = ["@channelusername"]
+CHANNEL_IDS = [
+    # e.g. -1001234567890,
+    # "@channelusername",
+]
+# --------------------------------------------------------------------------------
+
+async def _user_in_any_channel(client: Client, user_id: int) -> bool:
+    """
+    Returns True if CHANNEL_IDS is empty (no restriction) OR if user is in any channel in CHANNEL_IDS.
+    ADMINS bypass the check.
+    """
+    # no restriction set
+    if not CHANNEL_IDS:
+        return True
+
+    # admins bypass restriction
+    if user_id in ADMINS:
+        return True
+
+    for ch in CHANNEL_IDS:
+        try:
+            member = await client.get_chat_member(chat_id=ch, user_id=user_id)
+            if member.status in (ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER):
+                return True
+        except UserNotParticipant:
+            # not a participant in this channel, check next
+            continue
+        except Exception:
+            # ignore other errors and continue checking other channels
+            continue
+
+    return False
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
+    # membership restriction check
+    if not await _user_in_any_channel(client, message.from_user.id):
+        await message.reply_text("i am just a chatbot", quote=True)
+        return
+
     id = message.from_user.id
     if not await present_user(id):
         try:
@@ -163,6 +201,11 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
+
+    # membership restriction check (applies before presenting join buttons)
+    if not await _user_in_any_channel(client, message.from_user.id):
+        await message.reply_text("i am just a chatbot", quote=True)
+        return
 
     if bool(JOIN_REQUEST_ENABLE):
         invite = await client.create_chat_invite_link(
