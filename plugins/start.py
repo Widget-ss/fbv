@@ -13,10 +13,9 @@ from database.database import add_user, del_user, full_userbase, present_user
 # ----------------- <<< EDIT HERE: Put channel ids/usernames >>> -----------------
 # Add the channels (ids or usernames) you want to require membership in.
 # Examples: CHANNEL_IDS = [-1001234567890, -1009876543210] or CHANNEL_IDS = ["@channelusername"]
-CHANNEL_IDS = [
-    # e.g. -1001234567890,
-    # "@channelusername",
-]
+
+CHANNEL_IDS = [-1002966446697, -1002813945882, -1003030409351]
+
 # --------------------------------------------------------------------------------
 
 async def _user_in_any_channel(client: Client, user_id: int) -> bool:
